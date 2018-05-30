@@ -4,6 +4,7 @@ The language chosen is *Python*. The version of Python tested against is version
 Other than **sys** (in order to extract argument parameters) no packages have been used.
 
 ## Assumptions
+* It is assumed that L = 50 (the instructions contended L = 250)
 * Relationship between the intergalactic currency and roman numerals is first in the file.
 * The relationship between intergalactic currency and roman numeral is defined by a sentence of the structure 
 
