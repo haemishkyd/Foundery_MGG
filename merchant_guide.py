@@ -1,4 +1,5 @@
 import sys
+import os
 
 roman_numeral_dictionary = {
     "I":1,
@@ -159,8 +160,11 @@ if __name__ == "__main__":
         if (len(sys.argv) == 2):
             file_name = sys.argv[1]
             global_script_verbosity = 0
-        smart_print ("Welcome to the Merchant's Guide To the Galaxy",0)
+        if not os.path.exists(sys.argv[1]):
+            smart_print("Whats the probability I can't find "+sys.argv[1], 0)
+        else:
+            smart_print ("Welcome to the Merchant's Guide To the Galaxy",0)
 
-        read_the_file(file_name)
-        process_the_questions()    
+            read_the_file(file_name)
+            process_the_questions()    
 
