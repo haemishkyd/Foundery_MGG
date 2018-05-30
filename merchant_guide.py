@@ -98,7 +98,7 @@ def read_the_file(the_file):
             questions_to_answer.append(processed_line)
             continue
             
-        smart_print("I'm sorry but \""+line+"\" doesn't make sense to me!",0)
+        smart_print("I'm sorry but \""+line+"\" doesn't make sense to me - if Marvin's in a good mood he could help!",0)
         
 
 def are_any_of_these_in_those(these, those):
@@ -127,28 +127,34 @@ def process_the_questions():
                 intergalactic_sentence = intergalactic_sentence + item + " "
                 roman_numeral_sentence = roman_numeral_sentence + intergalactic_to_roman[item]
         if (len(intergalactic_sentence) == 0):
-            smart_print("I'm sorry but \""+question+"\" doesn't make sense to me!",0)
+            smart_print("I'm sorry but \""+question+"\" doesn't make sense to me!  Perhaps you should consult DEEP THOUGHT!",0)
             continue
         if (("Credits" in the_words) and (are_any_of_these_in_those(credits_per_piece.keys(),the_words))):
             smart_print((question+":"+"CQ"),1)            
             current_commodity = which_of_these_in_those(credits_per_piece.keys(),the_words)
             smart_print((intergalactic_sentence + current_commodity + " is " + str(decode_the_roman_numeral_string(roman_numeral_sentence)*credits_per_piece[current_commodity])),0)
         else:
-            smart_print((question+":"+"NQ"),1)            
-            smart_print((intergalactic_sentence + " is " + str(decode_the_roman_numeral_string(roman_numeral_sentence))),0)
+            if (the_words[len(the_words)-1] in intergalactic_to_roman.keys()):
+                smart_print((question+":"+"NQ"),1)            
+                smart_print((intergalactic_sentence + " is " + str(decode_the_roman_numeral_string(roman_numeral_sentence))),0)
+            else:
+                smart_print("I'm sorry but I don't know this metal: "+the_words[len(the_words)-1],0)
             
 
 if __name__ == "__main__":
-    file_name = ""    
-    if (len(sys.argv) == 3):
-        # we have passed in the test script and verbosity level
-        file_name = sys.argv[2]
-        global_script_verbosity = int(sys.argv[1])
-    if (len(sys.argv) == 2):
-        file_name = sys.argv[1]
-        global_script_verbosity = 0
-    smart_print ("Welcome to the Merchant's Guide To the Galaxy",0)
+    file_name = "" 
+    if (len(sys.argv) == 1):
+        smart_print("You need to specify an input file. Alternatively I could read you some Vogon poetry?",0) 
+    else:  
+        if (len(sys.argv) == 3):
+            # we have passed in the test script and verbosity level
+            file_name = sys.argv[2]
+            global_script_verbosity = int(sys.argv[1])
+        if (len(sys.argv) == 2):
+            file_name = sys.argv[1]
+            global_script_verbosity = 0
+        smart_print ("Welcome to the Merchant's Guide To the Galaxy",0)
 
-    read_the_file(file_name)
-    process_the_questions()    
+        read_the_file(file_name)
+        process_the_questions()    
 

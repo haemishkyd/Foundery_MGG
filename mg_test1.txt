@@ -1,3 +1,4 @@
+# Tests the nominal case of a direct translation to the roman numerals.
 glob is I
 prok is V
 pish is X

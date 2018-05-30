@@ -1,3 +1,4 @@
+# Tests the case where these intergalactic words are in a different order
 prok is I
 glob is V
 tegj is X
