@@ -26,6 +26,10 @@ global_script_verbosity = 0
 
 def smart_print(string_to_print, string_verbosity_level):
     if (string_verbosity_level <= global_script_verbosity):
+        output_fh = open("merchant_guide_output.txt",'a')
+        output_fh.write(string_to_print)
+        output_fh.write("\n\r")
+        output_fh.close()
         print (string_to_print)
 
 
@@ -145,7 +149,9 @@ if __name__ == "__main__":
     file_name = "" 
     if (len(sys.argv) == 1):
         smart_print("You need to specify an input file. Alternatively I could read you some Vogon poetry?",0) 
-    else:  
+    else: 
+        output_fh = open("merchant_guide_output.txt", 'w')
+        output_fh.close()
         if (len(sys.argv) == 3):
             # we have passed in the test script and verbosity level
             file_name = sys.argv[2]
