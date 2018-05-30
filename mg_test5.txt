@@ -16,4 +16,5 @@ how many Credits is glob prok Gold?
 how many Credits is glob prok Iron?
 # should say that it is unaware of Bronze
 how many Credits is tegj glob glob Bronze?
+#should say question is invalid
 how much wood could a wood chuck chuck if a wood chuck could chuck wood?

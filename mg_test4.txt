@@ -14,4 +14,5 @@ how many Credits is glob prok Silver?
 how many Credits is glob prok Gold?
 #the answer to this is 782
 how many Credits is glob prok Iron?
+#the answer is invalid
 how much wood could a wood chuck chuck if a wood chuck could chuck wood?
