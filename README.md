@@ -5,6 +5,8 @@ The language chosen is *Python*. The version of Python tested against is version
 
 Other than **sys**(in order to extract argument parameters) and **os** (for some file manipulation) no packages have been used.
 
+In all instances the output is displayed on the screen and written to a file. The file is named *merchant_guide_output.txt*.
+
 ## Executing
 To execute the script type: *python merchant_guide.py <test_script>*
 
