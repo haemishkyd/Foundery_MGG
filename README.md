@@ -33,3 +33,6 @@ or
 
           how much/many is <int_curr>
           eg: how much is pish tegj glob glob?
+
+## Attribution
+The icon made by Freepik from www.flaticon.com 
